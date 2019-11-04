@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">暖富乐</string>
+
+    <!--登录界面-->
+    <string name="hint_login_tel">请输入手机号</string>
+    <string name="hint_login_password">请输入密码</string>
+    <string name="log_in">登&#160;&#160;录</string>
+    <string name="verfication_login">短信验证登录</string>
+    <string name="forget_pw">忘记密码</string>
+    <string name="retrieve_pw">找回密码</string>
+    <string name="no_account_text">没有账号？</string>
+    <string name="register">立即注册</string>
+
+    <!--短信登录界面-->
+    <string name="hint_verfication">请输入验证码</string>
+    <string name="get_verfication_code">获取验证码</string>
+
+    <!--注册界面-->
+    <string name="welcome_register">欢迎注册瀚清</string>
+    <string name="hint_register_user">请输入用户名</string>
+    <string name="hint_register_tel">请输入手机号</string>
+    <string name="hint_register_password">请输入密码,6-18位</string>
+    <string name="hint_register_pw">请确认密码,6-18位</string>
+    <string name="hint_register_id">请输入设备编号</string>
+    <string name="hint_register_address">请输入设备地址</string>
+
+    <string name="hint_nation">国家</string>
+    <string name="hint_province">省</string>
+    <string name="hint_city">市</string>
+    <string name="hint_country">区/县</string>
+    <string name="hint_town">街道/乡镇</string>
+    <string name="hint_detail">详细地址</string>
+
+    <string name="btn_register">立即注册</string>
+    <string name="btn_ensure">确&#160;&#160;定</string>
+
+    <!--设备运行详情状态-->
+    <string name="item_rename">重命名</string>
+    <string name="item_wifi">重置WiFi</string>
+    <string name="item_delete">删除设备</string>
+    <string name="item_remote">远程操控</string>
+
+</resources>

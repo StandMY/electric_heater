@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_verfic_login"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:padding="30dp"
+        android:orientation="vertical">
+    <EditText
+        android:id="@+id/login_tel"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="@string/hint_login_tel"
+        android:textSize="@dimen/hint_text_size" />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+    <EditText
+        android:id="@+id/edit_account1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="@string/hint_verfication"
+        android:textSize="@dimen/hint_text_size" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/verfication_button_bg"
+        android:text="@string/get_verfication_code"
+        android:textColor="@color/veific_code_text"
+        android:textSize="18dp" />
+</RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@color/btn_background"
+        android:text="@string/log_in"
+        android:textColor="@color/btn_textColor"
+        android:textSize="@dimen/btn_text" />
+</LinearLayout>
+
+
+

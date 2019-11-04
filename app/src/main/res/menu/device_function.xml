@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_rename"
+        android:onClick="onClick"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@drawable/item_rename"
+        android:title="@string/item_rename" />
+    <item
+        android:id="@+id/item_wifi"
+        android:title="@string/item_wifi" />
+    <item
+        android:id="@+id/item_delete"
+        android:title="@string/item_delete" />
+    <item
+        android:id="@+id/item_remote"
+        android:title="@string/item_remote" />
+
+</menu>
