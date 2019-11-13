@@ -72,7 +72,7 @@ public class LoginActivity extends BaseActivity {
                 String account = accountEdit.getText().toString();
                 String password = passwordEdit.getText().toString();
                 if(account.equals("2819") && password.equals("123456")){
-                    Intent intent = new Intent(LoginActivity.this,DetailsOfDeviceActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                     finish();
                 }else {

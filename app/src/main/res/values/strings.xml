@@ -39,5 +39,11 @@
     <string name="item_wifi">重置WiFi</string>
     <string name="item_delete">删除设备</string>
     <string name="item_remote">远程操控</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!--导航栏-->
+    <string name="title_home">主页</string>
+    <string name="title_model">模式</string>
+    <string name="title_my">我的</string>
 
 </resources>
