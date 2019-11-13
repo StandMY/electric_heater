@@ -34,10 +34,29 @@
     <string name="btn_register">立即注册</string>
     <string name="btn_ensure">确&#160;&#160;定</string>
 
-    <!--设备运行详情状态-->
+    <!--设备运行状态-->
     <string name="item_rename">重命名</string>
     <string name="item_wifi">重置WiFi</string>
     <string name="item_delete">删除设备</string>
     <string name="item_remote">远程操控</string>
+
+    <!--连接设备界面-->
+    <string name="connect_device">连接设备</string>
+    <string name="wifi_hint">请确保您的手机已接入WiFI</string>
+    <string name="fist_operation">1.打开暖气设备，进入配对模式</string>
+    <string name="enter_wifiPw">2.输入wifi密码</string>
+    <string name="wifiPw_hint">请输入WiFi密码</string>
+    <string name="btn_pairing">开始连接</string>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="title_home">主页</string>
+    <string name="title_model">模式</string>
+    <string name="title_data">数据</string>
+    <string name="title_my">我的</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
 
 </resources>

@@ -4,7 +4,11 @@
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 获取照相机权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 获取网络状态改变的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 获取SD卡的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取WIFI信息状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.DetailsOfDeviceActivity"></activity>
+        <activity
+            android:name=".Activity.MainActivity"
+            android:label="@string/title_activity_main"></activity>
+        <activity android:name=".Activity.DeviceConnectActivity" />
+        <activity android:name=".Activity.UserActivity" />
+        <activity android:name=".Activity.DetailsOfDeviceActivity" />
         <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +36,16 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.RetrievePasswordActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.naroro.electric_heater.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
     </application>
 
 </manifest>
