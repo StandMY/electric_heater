@@ -1,13 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activity.ModelFragment">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryDark">
 
-</FrameLayout>
+        <Spinner
+            android:id="@+id/device_spinner"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/in_service" />
+
+            <TextView
+                android:id="@+id/service_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动模式"
+                android:textColor="@color/in_service"
+                android:textSize="@dimen/small_text_size" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/auto_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/mode_radio_button_selector"
+                android:button="@null"
+                android:checked="true"
+                android:text="@string/auto_mode"
+                android:textAlignment="center"
+                android:textColor="@drawable/mode_radio_button_selector"
+                android:textSize="@dimen/text_size" />
+
+
+            <RadioButton
+                android:id="@+id/time_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/mode_radio_button_selector"
+                android:button="@null"
+                android:text="@string/time_mode"
+                android:textAlignment="center"
+                android:textColor="@drawable/mode_radio_button_selector"
+                android:textSize="@dimen/text_size" />
+
+        </RadioGroup>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/model_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

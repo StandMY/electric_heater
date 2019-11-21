@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="10dp"
+    android:descendantFocusability="blocksDescendants">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/home_item_bg"
+    android:layout_marginTop="20dp">
+
+        <CheckBox
+            android:id="@+id/device_checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="336dp"
+            android:layout_marginRight="336dp"
+            android:layout_marginBottom="96dp" />
+
+        <TextView
+            android:id="@+id/device_light"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginEnd="317dp"
+            android:layout_marginRight="317dp"
+            android:layout_marginBottom="105dp"
+            android:background="@drawable/warn_light" />
+
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="19dp"
+            android:textSize="@dimen/device_name" />
+
+        <TextView
+            android:id="@+id/device_current_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="49dp"
+            android:layout_marginEnd="136dp"
+            android:layout_marginRight="136dp"
+            android:layout_marginBottom="44dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="@color/white"
+            android:textSize="@dimen/device_temperature" />
+
+        <TextView
+        android:id="@+id/device_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="93dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/device_model" />
+
+</RelativeLayout>
+</LinearLayout>

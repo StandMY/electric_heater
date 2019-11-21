@@ -1,7 +1,11 @@
 package com.example.naroro.electric_heater.Activity;
 
+import android.app.ActionBar;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,36 +16,26 @@ import android.widget.Toast;
 
 import com.example.naroro.electric_heater.Class.BaseActivity;
 import com.example.naroro.electric_heater.R;
+import com.example.naroro.electric_heater.databinding.ActivityLoginBinding;
 
-public class LoginActivity extends BaseActivity {
 
-    //获取界面上的控件
-    private EditText accountEdit;
-    private EditText passwordEdit;
-    private Button login;
+public class LoginActivity extends AppCompatActivity {
 
-    private TextView verfic_login;
-    private TextView register;
-    private TextView forget_pw;
-
+    ActivityLoginBinding mBinding;
+    ActionBar mActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        //获取登录信息控件的实例
-        accountEdit = (EditText) findViewById(R.id.account);
-        passwordEdit = (EditText) findViewById(R.id.password);
-        login = (Button) findViewById(R.id.login);
-
-        //获取登录界面其他信息的控件的实例
-        verfic_login = findViewById(R.id.verfic_login);
-        register = findViewById(R.id.register);
-        forget_pw = findViewById(R.id.forget_pw);
+        //setContentView(R.layout.activity_login);
+        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_login);
+        getSupportActionBar().hide();
+        //mActionBar = getActionBar();
+        //mActionBar.hide();
 
 
-        verfic_login.setOnClickListener(new View.OnClickListener() {
+
+        mBinding.verficLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, com.example.naroro.electric_heater.Activity.VerficationLoginActivity.class);
@@ -50,7 +44,7 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
-        register.setOnClickListener(new View.OnClickListener() {
+        mBinding.register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -58,7 +52,7 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
-        forget_pw.setOnClickListener(new View.OnClickListener() {
+        mBinding.forgetPw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, com.example.naroro.electric_heater.Activity.RetrievePasswordActivity.class);
@@ -66,11 +60,11 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        mBinding.login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String account = accountEdit.getText().toString();
-                String password = passwordEdit.getText().toString();
+                String account = mBinding.account.getText().toString();
+                String password = mBinding.password.getText().toString();
                 if(account.equals("2819") && password.equals("123456")){
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
@@ -80,8 +74,11 @@ public class LoginActivity extends BaseActivity {
                             Toast.LENGTH_LONG).show();
                 }
 
+
             }
         });
 
     }
+
+
 }

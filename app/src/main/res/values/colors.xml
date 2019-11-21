@@ -4,14 +4,35 @@
     <color name="colorPrimaryDark">#F8F8F8</color>
     <color name="colorAccent">#BBBBBB</color>
     <color name="red">#f00</color>
+    <color name="white">#fff</color>
     <color name="btn_background">#EC4A33</color>
     <color name="btn_textColor">#fff</color>
     <color name="text_black">#101010</color>
     <color name="logo_icon">#EA5404</color>
+    <color name="nav_checked">#EC4A33</color>
+    <color name="nav_unchecked">#444444</color>
+
+    <!--“我的”界面颜色-->
+    <color name="my_background">#F5F5F5</color>
+    <color name="line">#BBBBBB</color>
 
 
     <!--验证码按钮的颜色-->
     <color name="veific_code_stroke">#A3D0FD</color>
     <color name="veific_code_solid">#E6F1FC</color>
     <color name="veific_code_text">#1989FA</color>
+
+    <!--"模式"界面-->
+    <color name="in_service">#1CA41A</color>
+    <color name="rb_checked_bg">#8A8B8E</color>
+    <color name="rb_checked_text">#fff</color>
+
+    <!--主页界面-->
+    <color name="home_item_bg">#FA8071</color>
+    <color name="light_normal">#259B24</color>
+    <color name="light_stroke">#BBBBBB</color>
+    <color name="light_warn">#E51C23</color>
+    <color name="light_offline">#999290</color>
+    <color name="home_title">#F8F8F8</color>
+    <color name="home_title_text">#101010</color>
 </resources>

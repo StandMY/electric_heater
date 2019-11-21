@@ -1,8 +1,8 @@
 package com.example.naroro.electric_heater.Activity;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 public class ModelViewModel extends ViewModel {
     // TODO: Implement the ViewModel
@@ -10,7 +10,7 @@ public class ModelViewModel extends ViewModel {
 
     public ModelViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is nodel fragment");
+        mText.setValue("This is model fragment");
     }
 
     public LiveData<String> getText() {

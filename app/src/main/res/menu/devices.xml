@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/device_01"
+        android:orderInCategory="100"
+        android:title="@string/device_01"/>
+    <item
+        android:id="@+id/device_02"
+        android:orderInCategory="101"
+        android:title="@string/device_02"/>
+    <item
+        android:id="@+id/device_03"
+        android:orderInCategory="102"
+        android:title="@string/device_03"/>
+</menu>
