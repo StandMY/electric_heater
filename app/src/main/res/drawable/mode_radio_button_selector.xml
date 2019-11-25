@@ -1,0 +1,14 @@
+<?xml version ="1.0" encoding ="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:color="@color/rb_checked_text"
+        android:state_checked="true"
+        android:drawable="@color/rb_checked_bg" />
+    <!--点击显示-->
+
+    <item
+        android:color="@color/text_black"
+        android:state_checked="false"
+        android:drawable="@color/white"/><!--默认显示-->
+</selector>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorAccent"
+        app:logo="@mipmap/ic_launcher"
+        app:navigationContentDescription=""
+        app:navigationIcon="@drawable/icon_back"
+        app:subtitle="子标题"
+        app:subtitleTextColor="@color/white"
+        app:title="标题"
+        app:titleMarginStart="90dp"
+        app:titleTextColor="@color/white"/>
+</RelativeLayout>

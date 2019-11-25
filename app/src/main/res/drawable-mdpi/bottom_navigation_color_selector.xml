@@ -1,0 +1,7 @@
+<?xml version ="1.0" encoding ="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/nav_checked" android:state_checked="true" /><!--点击显示-->
+    <item android:color="@color/nav_unchecked" android:state_checked="false" /><!--默认显示-->
+</selector>
+
