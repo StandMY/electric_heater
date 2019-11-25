@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.naroro.electric_heater.Activity.RegisterActivity">
 
-    <include layout="@layout/title_register"/>
+    <include layout="@layout/title_simple"/>
 
     <LinearLayout
         android:layout_width="wrap_content"

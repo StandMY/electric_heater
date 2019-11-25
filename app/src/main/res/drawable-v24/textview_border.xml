@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:shape="rectangle"
+    tools:ignore="MissingDefaultResource">
+
+    <!--实心-->
+    <solid android:color="#ffffff" />
+
+    <!--描边-->
+    <stroke android:width="3dp"
+        android:color="#444444"/>
+
+    <!--圆角-->
+    <corners
+        android:radius="2dp"/>
+
+</shape>
