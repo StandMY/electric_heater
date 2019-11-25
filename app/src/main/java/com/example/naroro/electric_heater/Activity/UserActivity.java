@@ -19,6 +19,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+
 import com.example.naroro.electric_heater.Class.BaseActivity;
 import com.example.naroro.electric_heater.R;
 
