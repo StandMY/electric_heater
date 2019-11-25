@@ -12,36 +12,67 @@
         android:layout_marginTop="60dp"
         android:padding="30dp"
         android:orientation="vertical">
-    <EditText
-        android:id="@+id/login_tel"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:hint="@string/hint_login_tel"
-        android:textSize="@dimen/hint_text_size" />
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp">
 
-    <EditText
-        android:id="@+id/edit_account1"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:hint="@string/hint_verfication"
-        android:textSize="@dimen/hint_text_size" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/item_item_margin">
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="7dp"
-        android:layout_marginTop="7dp"
-        android:background="@drawable/verfication_button_bg"
-        android:text="@string/get_verfication_code"
-        android:textColor="@color/veific_code_text"
-        android:textSize="18dp" />
-</RelativeLayout>
+            <ImageView
+                android:id="@+id/icon_register_tel"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginTop="@dimen/icon_margin_top"
+                android:src="@drawable/icon_register_tel" />
+            <EditText
+                android:id="@+id/tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:inputType="phone"
+                android:layout_marginLeft="@dimen/image_editText_margin"
+                android:layout_toRightOf="@id/icon_register_tel"
+                android:hint="@string/hint_register_tel"
+                android:textSize="@dimen/register_hint_text_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/item_item_margin">
+            <ImageView
+                android:id="@+id/icon_register_code"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginTop="@dimen/icon_margin_top"
+                android:src="@drawable/icon_verfication_code" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/image_editText_margin"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/icon_register_code">
+
+                <EditText
+                    android:id="@+id/verfic_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_verfication"
+                    android:textSize="@dimen/register_hint_text_size" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/verfication_button_bg"
+                    android:text="@string/get_verfication_code"
+                    android:textColor="@color/veific_code_text"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
     </LinearLayout>
 
     <Button
@@ -50,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
-        android:background="@color/btn_background"
+        android:background="@drawable/btn_border"
         android:text="@string/log_in"
         android:textColor="@color/btn_textColor"
         android:textSize="@dimen/btn_text" />
