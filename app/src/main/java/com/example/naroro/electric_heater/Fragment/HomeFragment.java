@@ -1,7 +1,8 @@
-package com.example.naroro.electric_heater.Activity;
+package com.example.naroro.electric_heater.Fragment;
 
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,11 +10,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.example.naroro.electric_heater.Activity.AddDeviceActivity;
+import com.example.naroro.electric_heater.Activity.DetailsOfDeviceActivity;
+import com.example.naroro.electric_heater.Activity.RegisterActivity;
 import com.example.naroro.electric_heater.R;
 
 import java.util.ArrayList;
@@ -30,6 +36,7 @@ public class HomeFragment extends Fragment {
     private TextView device_name;
     private TextView device_model;
     private TextView device_current_temperature;
+    private ImageView add_device;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -47,7 +54,9 @@ public class HomeFragment extends Fragment {
         device_model = root.findViewById(R.id.device_model);
         device_current_temperature = root.findViewById(R.id.device_current_temperature);
 
-        //2. 数据源
+        add_device = root.findViewById(R.id.image_add_device);
+
+        //配置LitView数据
         List<Map<String,Object>> list = new ArrayList<Map<String, Object>>();
 
         Map<String,Object> map = new HashMap<String, Object>();
@@ -59,13 +68,13 @@ public class HomeFragment extends Fragment {
         map = new HashMap<String, Object>();
         map.put("device_name","卧室");
         map.put("device_model","自动模式");
-        map.put("device_current_temperature","69℃");
+        map.put("device_current_temperature","60℃");
         list.add(map);
 
         map = new HashMap<String, Object>();
         map.put("device_name","餐厅");
         map.put("device_model","自动模式");
-        map.put("device_current_temperature","69℃");
+        map.put("device_current_temperature","72℃");
         list.add(map);
 
         //3. 配饰适配器
@@ -79,6 +88,24 @@ public class HomeFragment extends Fragment {
         );
 
         mListView.setAdapter(adapter);
+
+        //跳转至添加设备界面
+        add_device.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddDeviceActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), DetailsOfDeviceActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return root;
 
     }
@@ -89,5 +116,6 @@ public class HomeFragment extends Fragment {
         mViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         // TODO: Use the ViewModel
     }
+
 
 }

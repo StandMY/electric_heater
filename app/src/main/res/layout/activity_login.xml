@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="60dp"
-            android:background="@color/btn_background"
+            android:background="@drawable/btn_border"
             android:text="@string/log_in"
             android:textColor="@color/btn_textColor"
             android:textSize="@dimen/btn_text" />

@@ -1,7 +1,6 @@
-package com.example.naroro.electric_heater.Activity;
+package com.example.naroro.electric_heater.Fragment;
 
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -13,14 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.naroro.electric_heater.Fragment.auto_mode_fragment;
-import com.example.naroro.electric_heater.Fragment.time_mode_fragment;
 import com.example.naroro.electric_heater.R;
 
 import java.util.ArrayList;

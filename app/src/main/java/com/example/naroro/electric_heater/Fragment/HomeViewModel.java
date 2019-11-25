@@ -1,4 +1,4 @@
-package com.example.naroro.electric_heater.Activity;
+package com.example.naroro.electric_heater.Fragment;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

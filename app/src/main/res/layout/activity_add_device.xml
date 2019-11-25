@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.AddDeviceActivity"
+    android:background="@color/main_background">
+
+    <include layout="@layout/title_simple"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+>
+
+            <TextView
+                android:id="@+id/text_device_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/new_device_id"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/small_text_size" />
+
+            <EditText
+                android:id="@+id/new_device_id"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/text_device_id"
+                android:background="@android:drawable/alert_light_frame" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/new_device_id"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/scanner" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/text_device_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/new_device_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/small_text_size" />
+
+            <EditText
+                android:id="@+id/new_device_name"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/text_device_name"
+                android:background="@android:drawable/alert_light_frame" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/text_device_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/new_device_power"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/small_text_size" />
+
+            <EditText
+                android:id="@+id/new_device_power"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/text_device_power"
+                android:background="@android:drawable/alert_light_frame" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="填写说明:"
+            android:textSize="@dimen/small_text_size"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="1. 设备编号为产品设备唯一标识，可通过“扫一扫”图标扫描产品条形码获得，也可手动输入"
+            android:lineSpacingExtra="10dp"
+            android:textSize="@dimen/small_text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="2. 设备名称可进行自定义设定，为设备命名以便区分（如客厅、卧室）"
+            android:lineSpacingExtra="10dp"
+            android:textSize="@dimen/small_text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="3. 设备功率为所添加设备的额定功率"
+            android:lineSpacingExtra="10dp"
+            android:textSize="@dimen/small_text_size" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_device_submit"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_border"
+        android:text="添加设备"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size"/>
+</LinearLayout>

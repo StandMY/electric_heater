@@ -1,16 +1,16 @@
-package com.example.naroro.electric_heater.Activity;
+package com.example.naroro.electric_heater.Fragment;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MyViewModel extends ViewModel {
+public class ModelViewModel extends ViewModel {
     // TODO: Implement the ViewModel
     private MutableLiveData<String> mText;
 
-    public MyViewModel() {
+    public ModelViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is my fragment");
+        mText.setValue("This is model fragment");
     }
 
     public LiveData<String> getText() {

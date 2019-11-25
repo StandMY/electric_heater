@@ -1,9 +1,14 @@
 package com.example.naroro.electric_heater.Activity;
 
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.naroro.electric_heater.R;
 
@@ -11,43 +16,53 @@ import java.lang.reflect.Method;
 
 public class DetailsOfDeviceActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.title_device_details);
+        setContentView(R.layout.activity_device_details);
 
+        //添加ActionBar中的返回按钮
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //设置标题的内容
+        getSupportActionBar().setTitle("客厅");
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.device_function,menu);
-//        menu.add(Menu.NONE, Menu.FIRST + 1, 0, "菜单1").setIcon(R.drawable.item_rename);
-//        menu.add(Menu.NONE, Menu.FIRST + 2, 0, "菜单2").setIcon(R.drawable.item_wifi);
-//        menu.add(Menu.NONE, Menu.FIRST + 2, 0, "菜单2").setIcon(R.drawable.item_delete);
-//        menu.add(Menu.NONE, Menu.FIRST + 2, 0, "菜单2").setIcon(R.drawable.item_remote);
-        return true;
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case android.R.id.home:
+                Toast.makeText(this,"Hello",Toast.LENGTH_LONG).show();
+                break;
             case R.id.item_rename:
-                return true;
+                break;
 
             case R.id.item_wifi:
-                return true;
+                break;
 
             case R.id.item_delete:
-                return true;
+                break;
 
             case R.id.item_remote:
-                return true;
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return true;
 
     }
+
 
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
@@ -64,5 +79,7 @@ public class DetailsOfDeviceActivity extends AppCompatActivity {
         }
         return super.onMenuOpened(featureId, menu);
     }
+
+
 
 }

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#F8F8F8</color>
+    <color name="colorPrimary">#444444</color>
+    <color name="colorPrimaryDark">#444444</color>
     <color name="colorAccent">#BBBBBB</color>
     <color name="red">#f00</color>
     <color name="white">#fff</color>
     <color name="btn_background">#EC4A33</color>
+    <color name="btn_border">#FF6E5B</color>
     <color name="btn_textColor">#fff</color>
     <color name="text_black">#101010</color>
     <color name="logo_icon">#EA5404</color>
     <color name="nav_checked">#EC4A33</color>
     <color name="nav_unchecked">#444444</color>
+
+    <color name="main_background">#F6F7FA</color>
 
     <!--“我的”界面颜色-->
     <color name="my_background">#F5F5F5</color>
