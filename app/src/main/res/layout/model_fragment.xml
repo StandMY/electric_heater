@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/title_background">
 
         <Spinner
             android:id="@+id/device_spinner"

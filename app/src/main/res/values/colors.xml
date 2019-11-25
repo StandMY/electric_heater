@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--设备详情标题栏-->
     <color name="colorPrimary">#444444</color>
     <color name="colorPrimaryDark">#444444</color>
     <color name="colorAccent">#BBBBBB</color>
+
+    <!--自定义title-->
+    <color name="title_background">#F8F8F8</color>
     <color name="red">#f00</color>
     <color name="white">#fff</color>
     <color name="btn_background">#EC4A33</color>
@@ -32,10 +37,10 @@
 
     <!--主页界面-->
     <color name="home_item_bg">#FA8071</color>
-    <color name="light_normal">#259B24</color>
-    <color name="light_stroke">#BBBBBB</color>
-    <color name="light_warn">#E51C23</color>
-    <color name="light_offline">#999290</color>
+    <color name="warn_light_normal">#259B24</color>
+    <color name="warn_light_border">#BBBBBB</color>
+    <color name="warn_light_warn">#E51C23</color>
+    <color name="warn_light_offline">#999290</color>
     <color name="home_title">#F8F8F8</color>
     <color name="home_title_text">#101010</color>
 </resources>

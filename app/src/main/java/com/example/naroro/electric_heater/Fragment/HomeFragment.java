@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
 
         mListView = root.findViewById(R.id.device_item_lv);
         mCheckBox = root.findViewById(R.id.device_checked);
-        device_light = root.findViewById(R.id.device_light);
+        device_light = root.findViewById(R.id.device_running_light);
         device_name = root.findViewById(R.id.device_name);
         device_model = root.findViewById(R.id.device_model);
         device_current_temperature = root.findViewById(R.id.device_current_temperature);

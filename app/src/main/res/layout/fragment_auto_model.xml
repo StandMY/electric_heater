@@ -180,6 +180,6 @@
         android:textSize="@dimen/btn_text"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:background="@color/btn_background" />
+        android:background="@drawable/btn_border" />
 
 </LinearLayout>
