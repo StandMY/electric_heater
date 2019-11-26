@@ -17,10 +17,10 @@
 
     <!--注册界面-->
     <string name="welcome_register">欢迎注册瀚清</string>
-    <string name="hint_register_user">请输入用户名</string>
+    <string name="hint_register_user">请输入用户名，1-11位</string>
     <string name="hint_register_tel">请输入手机号</string>
-    <string name="hint_register_password">请输入密码,6-18位</string>
-    <string name="hint_register_pw">请确认密码,6-18位</string>
+    <string name="hint_register_password">请输入密码,1-8位</string>
+    <string name="hint_register_pw">请确认密码,1-8位</string>
     <string name="hint_register_id">请输入设备编号</string>
     <string name="hint_register_address">请输入设备地址</string>
 

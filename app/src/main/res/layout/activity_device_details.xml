@@ -10,25 +10,49 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+        android:paddingRight="10dp">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/device_running_light"
+            android:id="@+id/device_alarm_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/warn_light"/>
 
         <TextView
-            android:id="@+id/device_running_state"
+            android:id="@+id/device_alarm_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:textColor="@color/warn_light_normal"
-            android:layout_toRightOf="@id/device_running_light"
+            android:textColor="@color/alarm_light_normal"
+            android:layout_toRightOf="@id/device_alarm_light"
             android:text="正常"
             android:textSize="@dimen/small_text_size"/>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/device_running_light"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/heat_logo" />
+
+            <TextView
+                android:id="@+id/device_running_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/device_running_light"
+                android:text="加热中"
+                android:textColor="@color/heat_light"
+                android:textSize="@dimen/small_text_size" />
+        </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

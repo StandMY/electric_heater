@@ -37,10 +37,12 @@
 
     <!--主页界面-->
     <color name="home_item_bg">#FA8071</color>
-    <color name="warn_light_normal">#259B24</color>
-    <color name="warn_light_border">#BBBBBB</color>
-    <color name="warn_light_warn">#E51C23</color>
-    <color name="warn_light_offline">#999290</color>
+    <color name="alarm_light_normal">#259B24</color>
+    <color name="alarm_light_border">#BBBBBB</color>
+    <color name="alarm_light_warn">#E51C23</color>
+    <color name="alarm_light_offline">#999290</color>
     <color name="home_title">#F8F8F8</color>
     <color name="home_title_text">#101010</color>
+    <color name="heat_light">#E51C23</color>
+    <color name="warm_light">#1296db</color>
 </resources>
