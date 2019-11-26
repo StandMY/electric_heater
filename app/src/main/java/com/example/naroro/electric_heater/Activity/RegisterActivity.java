@@ -29,8 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText user;
     private EditText tel;
     private EditText pwd;
-    private String user1,pwd1,tel1;
+    private EditText smsCode;
+    private String user1,pwd1,tel1,smsCode1;
     private Button reg;
+    private Button msg;
 
     final OkHttpClient client = new OkHttpClient();
 
@@ -52,7 +54,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
         };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,17 @@ public class RegisterActivity extends AppCompatActivity {
         user = (EditText) findViewById(R.id.user_name);
         tel = (EditText) findViewById(R.id.tel);
         pwd = (EditText) findViewById(R.id.pw);
-        reg = (Button) findViewById(R.id.btn_login);
+        reg = (Button) findViewById(R.id.btn_register);
+        msg = (Button) findViewById(R.id.get_verfic_code);
+        smsCode = (EditText) findViewById(R.id.verfic_code);
+
+        msg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tel1 = tel.getText().toString().trim();
+                postMsgRequest(tel1);
+            }
+        });
 
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,26 +88,63 @@ public class RegisterActivity extends AppCompatActivity {
                 user1=user.getText().toString().trim();
                 pwd1=pwd.getText().toString().trim();
                 tel1=tel.getText().toString().trim();
+                smsCode1=smsCode.getText().toString().trim();
                 //通过okhttp发起post请求
-                postRequest(user1,pwd1,tel1);
-                System.out.println(user1);
+                postRequest(user1,pwd1,tel1,smsCode1);
+                //System.out.println(user1);
             }
         });
 
     }
     /**
+     * post短信请求后台验证码
+     * @param telephonenum
+     */
+    private void postMsgRequest(String telephonenum)  {
+        //建立请求表单，添加上传服务器的参数
+        RequestBody formBody = new FormBody.Builder()
+                .add("telephoneNum",telephonenum)
+                .build();
+        //发起请求
+        final Request request = new Request.Builder()
+                .url("http://192.168.1.164:8080/msgvalidate?")
+                .post(formBody)
+                .build();
+        //新建一个线程，用于得到服务器响应的参数
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Response response = null;
+                try {
+                    //回调
+                    response = client.newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        //将服务器响应的参数response.body().string())发送到hanlder中，并更新ui
+                        mHandler.obtainMessage(1, response.body().string()).sendToTarget();
+
+                    } else {
+                        throw new IOException("Unexpected code:" + response);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+    /**
      * post请求后台
      * @param username
      * @param password
+     * @param telephonenum
      */
-    private void postRequest(String username,String password,String telephonenum)  {
+    private void postRequest(String username,String password,String telephonenum,String smsCode)  {
         //建立请求表单，添加上传服务器的参数
         RequestBody formBody = new FormBody.Builder()
                 .add("userName",username)
                 .add("userPassword",password)
                 .add("telephoneNum",telephonenum)
                 .add("userRight","1")
-                .add("smsCode","700726")
+                .add("smsCode",smsCode)
                 .build();
         //发起请求
         final Request request = new Request.Builder()
