@@ -10,9 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.naroro.electric_heater.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -36,18 +39,55 @@ public class VerficationLoginActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == 1) {
-                String ReturnMessage = (String) msg.obj;
-                Log.i("获取的返回信息", ReturnMessage);
-//                final UserBean userBean = new Gson().fromJson(ReturnMessage, UserBean.class);
-//                final String AA = userBean.getMsg();
-                /***
-                 * 在此处可以通过获取到的Msg值来判断
-                 * 给出用户提示注册成功 与否，以及判断是否用户名已经存在
-                 */
-//                Log.i("MSGhahahha", AA);
+                String ReturnInfo = (String) msg.obj;
+                Log.i("获取的返回信息", ReturnInfo);
+                verficationSendResult(ReturnInfo);
+            }
+            else if(msg.what ==2){
+                String ReturnInfo = (String) msg.obj;
+                Log.i("获取的返回信息", ReturnInfo);
+                loginResult(ReturnInfo);
             }
         }
     };
+
+    private void loginResult(String jsonData) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            int resultCode = jsonObject.getInt("code");
+            String returnMessage = jsonObject.getString("message");
+
+            if(resultCode == 100){
+                Toast.makeText(VerficationLoginActivity.this,returnMessage,
+                        Toast.LENGTH_LONG).show();
+                //跳转至主界面
+                Intent intent = new Intent(VerficationLoginActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else {
+                Toast.makeText(VerficationLoginActivity.this,returnMessage,
+                        Toast.LENGTH_LONG).show();
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void verficationSendResult(String jsonData) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            String result = jsonObject.getString("success");
+            String returnMessage = jsonObject.getString("message");
+
+            if(result.equals("true")){
+                Toast.makeText(VerficationLoginActivity.this,returnMessage,
+                        Toast.LENGTH_LONG).show();
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Override
@@ -59,16 +99,21 @@ public class VerficationLoginActivity extends AppCompatActivity {
         /**
          * 初始化
          */
-        tel = (EditText) findViewById(R.id.tel);
-        msg = (Button) findViewById(R.id.get_verfic_code);
-        smsCode = (EditText) findViewById(R.id.verfic_code);
-        login = (Button) findViewById(R.id.btn_login);
+        tel = findViewById(R.id.tel);
+        msg = findViewById(R.id.get_verfic_code);
+        smsCode = findViewById(R.id.verfic_code);
+        login = findViewById(R.id.btn_login);
 
         msg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 tel1 = tel.getText().toString().trim();
-                postMsgRequest(tel1);
+                if(tel1.length()!=11){
+                    Toast.makeText(VerficationLoginActivity.this,"手机号长度应为11位",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    postMsgRequest(tel1);
+                }
             }
         });
         login.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +152,6 @@ public class VerficationLoginActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             //将服务器响应的参数response.body().string())发送到hanlder中，并更新ui
                             mHandler.obtainMessage(1, response.body().string()).sendToTarget();
-
                         } else {
                             throw new IOException("Unexpected code:" + response);
                         }
@@ -143,7 +187,7 @@ public class VerficationLoginActivity extends AppCompatActivity {
                     response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
                         //将服务器响应的参数response.body().string())发送到hanlder中，并更新ui
-                        mHandler.obtainMessage(1, response.body().string()).sendToTarget();
+                        mHandler.obtainMessage(2, response.body().string()).sendToTarget();
 
                     } else {
                         mHandler.obtainMessage(1, response.body().string()).sendToTarget();

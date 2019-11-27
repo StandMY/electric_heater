@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="@dimen/time_frag_padding"
-    android:layout_marginTop="@dimen/item_margin_top"
-    android:orientation="vertical">
+    android:layout_marginTop="@dimen/item_margin_top">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,14 +16,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/btn_background"
-        android:layout_marginLeft="@dimen/frag_margin_left"
-        android:text="1时段:"
+        android:layout_marginStart="@dimen/frag_margin_left"
+        android:text="@string/first_time_frag"
         android:textSize="@dimen/big_text_size" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/item_padding_left"
+        android:paddingStart="@dimen/item_padding_left"
         android:gravity="center_vertical"
         android:layout_marginTop="@dimen/item_margin_top">
 
@@ -28,35 +31,35 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="开始:"
+            android:text="@string/start"
             android:textColor="@color/text_black"
             android:textSize="@dimen/text_size" />
 
         <Spinner
+            android:id="@+id/first_start_hour"
             android:layout_width="@dimen/small_spinner_width"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/small_spinner_margin_left"
-            android:entries="@array/hour_select"
-            android:text="00" />
+            android:layout_marginStart="@dimen/small_spinner_margin_left"
+            android:entries="@array/hour_select" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="时"
+            android:text="@string/hour"
             android:textSize="@dimen/text_size"
             android:textColor="@color/text_black"/>
 
         <Spinner
+            android:id="@+id/first_start_minute"
             android:layout_width="@dimen/small_spinner_width"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/small_spinner_margin_left"
-            android:entries="@array/minute"
-            android:text="00" />
+            android:layout_marginStart="@dimen/small_spinner_margin_left"
+            android:entries="@array/minute" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="分"
+            android:text="@string/minute"
             android:textSize="@dimen/text_size"
             android:textColor="@color/text_black"/>
 
@@ -72,35 +75,35 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="结束:"
+            android:text="@string/end"
             android:textSize="@dimen/text_size"
             android:textColor="@color/text_black"/>
 
         <Spinner
+            android:id="@+id/first_end_hour"
             android:layout_width="@dimen/small_spinner_width"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/small_spinner_margin_left"
-            android:entries="@array/hour_select"
-            android:text="00" />
+            android:layout_marginStart="@dimen/small_spinner_margin_left"
+            android:entries="@array/hour_select" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="时"
+            android:text="@string/hour"
             android:textSize="@dimen/text_size"
             android:textColor="@color/text_black"/>
 
         <Spinner
+            android:id="@+id/first_end_minute"
             android:layout_width="@dimen/small_spinner_width"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/small_spinner_margin_left"
-            android:entries="@array/minute"
-            android:text="00" />
+            android:layout_marginStart="@dimen/small_spinner_margin_left"
+            android:entries="@array/minute" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="分"
+            android:text="@string/minute"
             android:textSize="@dimen/text_size"
             android:textColor="@color/text_black"/>
 
@@ -115,14 +118,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="温度:"
+            android:text="@string/temperature"
             android:textColor="@color/text_black"
             android:textSize="@dimen/text_size" />
 
         <Spinner
-            android:id="@+id/temperature_picker"
-            android:layout_marginLeft="@dimen/big_spinner_margin_left"
-            android:layout_marginRight="@dimen/big_spinner_margin_right"
+            android:id="@+id/first_temperature"
+            android:layout_marginStart="@dimen/big_spinner_margin_left"
+            android:layout_marginEnd="@dimen/big_spinner_margin_right"
             android:layout_width="@dimen/big_spinner_width"
             android:layout_height="match_parent"
             android:entries="@array/tempare_select"/>
@@ -130,7 +133,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="℃"
+            android:text="@string/degree"
             android:textColor="@color/text_black"
             android:textSize="@dimen/text_size" />
 
@@ -144,14 +147,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="温差:"
+            android:text="@string/difference"
             android:textColor="@color/text_black"
             android:textSize="@dimen/text_size" />
 
         <Spinner
-            android:id="@+id/temper_differ_picker"
-            android:layout_marginLeft="@dimen/big_spinner_margin_left"
-            android:layout_marginRight="@dimen/big_spinner_margin_right"
+            android:id="@+id/first_difference"
+            android:layout_marginStart="@dimen/big_spinner_margin_left"
+            android:layout_marginEnd="@dimen/big_spinner_margin_right"
             android:layout_width="@dimen/big_spinner_width"
             android:layout_height="match_parent"
             android:entries="@array/temp_differ_select"/>
@@ -159,7 +162,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="℃"
+            android:text="@string/degree"
             android:textColor="@color/text_black"
             android:textSize="@dimen/text_size" />
 
@@ -174,14 +177,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="功率:"
+            android:text="@string/power"
             android:textColor="@color/text_black"
             android:textSize="@dimen/text_size" />
 
         <Spinner
-            android:id="@+id/power_picker"
-            android:layout_marginLeft="@dimen/big_spinner_margin_left"
-            android:layout_marginRight="@dimen/big_spinner_margin_right"
+            android:id="@+id/first_power"
+            android:layout_marginStart="@dimen/big_spinner_margin_left"
+            android:layout_marginEnd="@dimen/big_spinner_margin_right"
             android:layout_width="@dimen/big_spinner_width"
             android:layout_height="match_parent"
             android:entries="@array/power_select"/>
@@ -195,6 +198,198 @@
 
     </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/btn_background"
+            android:layout_marginStart="@dimen/frag_margin_left"
+            android:text="@string/second_time_frag"
+            android:textSize="@dimen/big_text_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/item_padding_left"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/item_margin_top">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size" />
+
+            <Spinner
+                android:id="@+id/second_start_hour"
+                android:layout_width="@dimen/small_spinner_width"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/small_spinner_margin_left"
+                android:entries="@array/hour_select" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hour"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_black"/>
+
+            <Spinner
+                android:id="@+id/second_start_minute"
+                android:layout_width="@dimen/small_spinner_width"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/small_spinner_margin_left"
+                android:entries="@array/minute" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minute"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/item_padding_left"
+            android:layout_marginTop="@dimen/item_margin_top"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/end"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_black"/>
+
+            <Spinner
+                android:id="@+id/second_end_hour"
+                android:layout_width="@dimen/small_spinner_width"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/small_spinner_margin_left"
+                android:entries="@array/hour_select" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hour"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_black"/>
+
+            <Spinner
+                android:id="@+id/second_end_minute"
+                android:layout_width="@dimen/small_spinner_width"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/small_spinner_margin_left"
+                android:entries="@array/minute" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minute"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/text_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_margin_top"
+            android:gravity="center"
+            android:paddingLeft="@dimen/item_padding_left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size" />
+
+            <Spinner
+                android:id="@+id/second_temperature"
+                android:layout_marginStart="@dimen/big_spinner_margin_left"
+                android:layout_marginEnd="@dimen/big_spinner_margin_right"
+                android:layout_width="@dimen/big_spinner_width"
+                android:layout_height="match_parent"
+                android:entries="@array/tempare_select"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/degree"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_margin_top"
+            android:paddingLeft="@dimen/item_padding_left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size" />
+
+            <Spinner
+                android:id="@+id/second_difference"
+                android:layout_marginStart="@dimen/big_spinner_margin_left"
+                android:layout_marginEnd="@dimen/big_spinner_margin_right"
+                android:layout_width="@dimen/big_spinner_width"
+                android:layout_height="match_parent"
+                android:entries="@array/temp_differ_select"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/degree"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_margin_top"
+            android:paddingLeft="@dimen/item_padding_left">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/power"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size" />
+
+            <Spinner
+                android:id="@+id/second_power"
+                android:layout_marginStart="@dimen/big_spinner_margin_left"
+                android:layout_marginEnd="@dimen/big_spinner_margin_right"
+                android:layout_width="@dimen/big_spinner_width"
+                android:layout_height="match_parent"
+                android:entries="@array/power_select"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="档"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+    </LinearLayout>
 <!--    <Button-->
 <!--        android:id="@+id/time_mode_apply"-->
 <!--        android:layout_width="@dimen/small_btn_width"-->
@@ -205,4 +400,5 @@
 <!--        android:layout_marginTop="50dp"-->
 <!--        android:layout_gravity="center"-->
 <!--        android:background="@color/btn_background" />-->
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

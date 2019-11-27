@@ -10,9 +10,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="10dp">
+        android:layout_marginTop="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -41,18 +41,174 @@
 
             <ImageView
                 android:id="@+id/device_running_light"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/heat_logo" />
 
             <TextView
                 android:id="@+id/device_running_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/device_running_light"
                 android:text="加热中"
                 android:textColor="@color/heat_light"
                 android:textSize="@dimen/small_text_size" />
         </LinearLayout>
     </RelativeLayout>
+
+
+    <com.example.naroro.electric_heater.Class.TempCircleProgress
+        android:id="@+id/circle_progress"
+        android:layout_width="@dimen/temp_size"
+        android:layout_height="@dimen/temp_size"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        app:antiAlias="true"
+        app:arcWidth="15dp"
+        app:dottedLineWidth="10dp"
+        app:bgArcColor="@android:color/darker_gray"
+        app:foreStartColor="@color/low_temp"
+        app:foreEndColor="@color/high_temp"
+        app:bgArcWidth="2dp"
+        app:hintSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
+        app:maxValue="60"
+        app:startAngle="135"
+        app:sweepAngle="270"
+        app:textOffsetPercentInRadius="0.6"
+        app:unit="最高为60℃"
+        app:unitColor="@android:color/darker_gray"
+        app:unitSize="15dp"
+        app:value="75"
+        app:valueColor="@color/temp_text"
+        app:valueSize="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/main_background"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/first"
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="70dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/running_temp_logo"
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="@dimen/logo_size"
+                android:src="@drawable/temp_logo" />
+
+            <TextView
+                android:id="@+id/running_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/running_temp_logo"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="59℃"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="100dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/running_difference_logo"
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="@dimen/logo_size"
+                android:src="@drawable/difference_logo" />
+
+            <TextView
+                android:id="@+id/running_difference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="5℃"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+</RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/main_background">
+
+            <LinearLayout
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginLeft="70dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size"
+                    android:src="@drawable/power_logo" />
+
+                <TextView
+                    android:id="@+id/running_power"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="三档"
+                    android:textSize="@dimen/text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginEnd="100dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size"
+                    android:src="@drawable/model_logo" />
+
+                <TextView
+                    android:id="@+id/running_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="自动"
+                    android:textSize="@dimen/text_size" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/device_toggle_button"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_border"
+        android:text="开启"
+        android:textSize="@dimen/btn_text"/>
 </LinearLayout>

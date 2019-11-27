@@ -10,11 +10,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.naroro.electric_heater.Class.TempCircleProgress;
 import com.example.naroro.electric_heater.R;
 
 import java.lang.reflect.Method;
 
 public class DetailsOfDeviceActivity extends AppCompatActivity {
+
+    private TempCircleProgress mTempCircleProgress;
 
 
     @Override
@@ -29,12 +32,15 @@ public class DetailsOfDeviceActivity extends AppCompatActivity {
 
         //设置标题的内容
         getSupportActionBar().setTitle("客厅");
+
+        //显示实时温度
+        mTempCircleProgress = findViewById(R.id.circle_progress);
+        mTempCircleProgress.setValue(25);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.device_function,menu);
-
         return super.onCreateOptionsMenu(menu);
     }
 

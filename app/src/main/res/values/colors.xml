@@ -45,4 +45,9 @@
     <color name="home_title_text">#101010</color>
     <color name="heat_light">#E51C23</color>
     <color name="warm_light">#1296db</color>
+
+    <!--设备详情界面-->
+    <color name="low_temp">#FF6E5B</color>
+    <color name="high_temp">#CA2711</color>
+    <color name="temp_text">#EC4833</color>
 </resources>

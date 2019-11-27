@@ -43,4 +43,9 @@
     <dimen name="device_temperature">50sp</dimen>
     <dimen name="device_model">20sp</dimen>
 
+    <!--设备详情界面-->
+    <dimen name="temp_size">150dp</dimen>
+    <dimen name="logo_size">60dp</dimen>
+    <dimen name="toggle_button_width">150dp</dimen>
+
 </resources>

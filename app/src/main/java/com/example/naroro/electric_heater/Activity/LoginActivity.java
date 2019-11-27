@@ -12,10 +12,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.naroro.electric_heater.R;
 import com.example.naroro.electric_heater.databinding.ActivityLoginBinding;
 import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -39,22 +44,46 @@ public class LoginActivity extends AppCompatActivity {
     final OkHttpClient client = new OkHttpClient();
 
 
-    private Handler mHandler = new Handler(){
+    private  Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == 1) {
-                String ReturnMessage = (String) msg.obj;
-                Log.i("获取的返回信息", ReturnMessage);
+                String ReturnInfo = (String) msg.obj;
+                Log.i("获取的返回信息", ReturnInfo);
+                loginResult(ReturnInfo);
 //                final UserBean userBean = new Gson().fromJson(ReturnMessage, UserBean.class);
 //                final String AA = userBean.getMsg();
                 /***
                  * 在此处可以通过获取到的Msg值来判断
                  * 给出用户提示注册成功 与否，以及判断是否用户名已经存在
                  */
-//                Log.i("MSGhahahha", AA);
             }
         }
     };
+
+    private void loginResult(String jsonData) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            int returnCode = jsonObject.getInt("code");
+            String returnMessage = jsonObject.getString("message");
+            JSONObject returnContent = jsonObject.getJSONObject("content");
+            int userId = returnContent.getInt("userId");
+            String token = returnContent.getString("token");
+
+
+            if(returnCode == 100){
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else{
+                Toast.makeText(LoginActivity.this,"用户名或密码输入错误",
+                        Toast.LENGTH_LONG).show();
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

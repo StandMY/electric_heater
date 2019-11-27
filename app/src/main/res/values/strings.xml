@@ -69,6 +69,21 @@
     <!--模式界面-->
     <string name="auto_mode">自动模式</string>
     <string name="time_mode">分段模式</string>
+    <string name="first_time_frag">时段1</string>
+    <string name="second_time_frag">时段2</string>
+    <string name="third_time_frag">时段3</string>
+    <string name="fourth_time_frag">时段4</string>
+    <string name="fifth_time_frag">时段5</string>
+    <string name="sixth_time_frag">时段6</string>
+    <string name="seventh_time_frag">时段7</string>
+    <string name="start">开始:</string>
+    <string name="end">结束:</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="temperature">温度:</string>
+    <string name="difference">温差:</string>
+    <string name="power">功率:</string>
+    <string name="degree">℃</string>
 
     <!--添加设备界面-->
     <string name="new_device_id">设备编号:</string>
