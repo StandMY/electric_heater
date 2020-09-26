@@ -1,9 +1,12 @@
 apply plugin: 'com.android.application'
+apply from:'dependency.gradle'
+//api 'com.aliyun.iot.aep.sdk:apiclient:0.0.9.1'
+//api 'com.aliyun.alink.linksdk:api-client-biz:1.0.1'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.naroro.electric_heater"
+        applicationId "com.example.naroro.electricHeater"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -13,11 +16,30 @@ android {
         dataBinding {
             enabled true
         }
+        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+
+    signingConfigs {
+        release {
+            v2SigningEnabled false
+            storeFile file("D:\\localAndAuto.jks")
+            storePassword 'password'
+            keyAlias 'key0'
+            keyPassword 'password'
         }
     }
 }
@@ -39,4 +61,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+
+    implementation 'org.litepal.android:core:1.6.0'
+    implementation 'de.gerdi-project:GSON:6.0.6'
+
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+
 }

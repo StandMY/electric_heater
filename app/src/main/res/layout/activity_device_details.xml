@@ -3,9 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activity.DetailsOfDeviceActivity"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical"
+    tools:context=".Activity.DetailsOfDeviceActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/remote_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="@string/remote_toggle_button"
+            android:textColor="@color/text_black"
+            android:textSize="20sp" />
+        <Switch
+            android:id="@+id/switch_remote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:switchMinWidth="20dp"
+            android:layout_toRightOf="@+id/remote_string"
+            android:track="@drawable/switch_track"
+            android:thumb="@drawable/switch_thumb"
+            android:checked="true"/>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,22 +43,25 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/device_alarm_light"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/warn_light"/>
+            android:layout_alignParentLeft="true">
 
-        <TextView
-            android:id="@+id/device_alarm_state"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/alarm_light_normal"
-            android:layout_toRightOf="@id/device_alarm_light"
-            android:text="正常"
-            android:textSize="@dimen/small_text_size"/>
+            <TextView
+                android:id="@+id/device_alarm_light"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/not_running_light"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/device_alarm_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/device_alarm_light"
+                android:text="运行正常"
+                android:textColor="@color/alarm_light_normal"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -40,46 +70,46 @@
             android:layout_alignParentRight="true">
 
             <ImageView
-                android:id="@+id/device_running_light"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/heat_logo" />
-
+                android:src="@drawable/heat_logo"
+                android:layout_gravity="center"/>
             <TextView
                 android:id="@+id/device_running_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:text="加热中"
-                android:textColor="@color/heat_light"
-                android:textSize="@dimen/small_text_size" />
+                android:textColor="@color/btn_background"
+                android:textSize="20sp" />
         </LinearLayout>
     </RelativeLayout>
 
 
-    <com.example.naroro.electric_heater.Class.TempCircleProgress
+    <com.example.naroro.electricHeater.Class.TempCircleProgress
         android:id="@+id/circle_progress"
         android:layout_width="@dimen/temp_size"
         android:layout_height="@dimen/temp_size"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         app:antiAlias="true"
         app:arcWidth="15dp"
-        app:dottedLineWidth="10dp"
         app:bgArcColor="@android:color/darker_gray"
-        app:foreStartColor="@color/low_temp"
+        app:bgArcWidth="3dp"
+        app:dottedLineWidth="10dp"
         app:foreEndColor="@color/high_temp"
-        app:bgArcWidth="2dp"
+        app:foreStartColor="@color/low_temp"
         app:hintSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498"
-        app:maxValue="60"
+        app:maxValue="100"
         app:startAngle="135"
         app:sweepAngle="270"
         app:textOffsetPercentInRadius="0.6"
-        app:unit="最高为60℃"
+        app:unit="最高为99℃"
         app:unitColor="@android:color/darker_gray"
         app:unitSize="15dp"
         app:value="75"
@@ -89,126 +119,100 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/details_settingdata_bg"
         android:orientation="vertical"
-        android:background="@color/main_background"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-
-        <LinearLayout
-            android:id="@+id/first"
-            android:layout_width="@dimen/logo_size"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="70dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/running_temp_logo"
-                android:layout_width="@dimen/logo_size"
-                android:layout_height="@dimen/logo_size"
-                android:src="@drawable/temp_logo" />
-
-            <TextView
-                android:id="@+id/running_temp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/running_temp_logo"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="59℃"
-                android:textSize="@dimen/text_size" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="@dimen/logo_size"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="100dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/running_difference_logo"
-                android:layout_width="@dimen/logo_size"
-                android:layout_height="@dimen/logo_size"
-                android:src="@drawable/difference_logo" />
-
-            <TextView
-                android:id="@+id/running_difference"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="5℃"
-                android:textSize="@dimen/text_size" />
-        </LinearLayout>
-</RelativeLayout>
+        android:paddingBottom="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/main_background">
+            android:layout_marginTop="20dp">
 
             <LinearLayout
+                android:id="@+id/details_setting_first"
                 android:layout_width="@dimen/logo_size"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="100dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginRight="30dp"
+                android:layout_toLeftOf="@id/details_setting_second"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="@dimen/logo_size"
                     android:layout_height="@dimen/logo_size"
-                    android:src="@drawable/power_logo" />
+                    android:src="@drawable/temp_logo" />
 
                 <TextView
-                    android:id="@+id/running_power"
+                    android:id="@+id/running_temp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="三档"
-                    android:textSize="@dimen/text_size" />
+                    android:text="59℃"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/details_setting_second"
                 android:layout_width="@dimen/logo_size"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginLeft="60dp"
-                android:layout_marginEnd="100dp"
+                android:layout_centerInParent="true"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/running_difference_logo"
                     android:layout_width="@dimen/logo_size"
                     android:layout_height="@dimen/logo_size"
-                    android:src="@drawable/model_logo" />
+                    android:src="@drawable/difference_logo" />
 
                 <TextView
-                    android:id="@+id/running_model"
+                    android:id="@+id/running_difference"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="自动"
-                    android:textSize="@dimen/text_size" />
+                    android:text="5℃"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/details_setting_third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/details_setting_second"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/running_mode_logo"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/ic_model" />
+
+                <TextView
+                    android:id="@+id/running_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="自动模式"
+                    android:textSize="15sp" />
+
             </LinearLayout>
         </RelativeLayout>
+
     </LinearLayout>
 
     <Button
         android:id="@+id/device_toggle_button"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
         android:background="@drawable/btn_border"
-        android:text="开启"
-        android:textSize="@dimen/btn_text"/>
+        android:text="停止加热"
+        android:textColor="@color/white"
+        android:textSize="@dimen/btn_text" />
 </LinearLayout>

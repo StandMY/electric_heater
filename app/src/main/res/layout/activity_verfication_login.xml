@@ -39,7 +39,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginTop="@dimen/item_item_margin">
+            android:layout_marginTop="20dp">
             <ImageView
                 android:id="@+id/icon_register_code"
                 android:layout_width="@dimen/icon_size"

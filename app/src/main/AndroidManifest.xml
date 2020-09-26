@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.naroro.electric_heater">
+    package="com.example.naroro.electricHeater">
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -8,44 +8,51 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 获取网络状态改变的权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 获取SD卡的权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取WIFI信息状态的权限 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
+        android:name="com.example.naroro.electricHeater.MyApplication"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:networkSecurityConfig="@xml/network_security_config">
-        <activity android:name=".Activity.AddDeviceActivity"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.naroro.electricHeater.Activity.ScannerActivity"></activity>
+        <activity android:name="com.example.naroro.electricHeater.Activity.AddDeviceActivity" >
+
+        </activity>
 
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/bottom_navigation_color_selector" />
 
-        <activity android:name=".Activity.DeviceConnectActivity" />
-        <activity
-            android:name=".Activity.MainActivity"
-            android:label="@string/title_activity_main">
+        <activity android:name="com.example.naroro.electricHeater.Activity.DeviceConnectActivity" >
 
         </activity>
-        <activity android:name=".Activity.DetailsOfDeviceActivity"
-            android:logo="@drawable/icon_back"
-            android:label="Hello"/>
-        <activity android:name=".Activity.LoginActivity">
+
+        <activity android:name="com.example.naroro.electricHeater.Activity.MainActivity"></activity>
+        <activity
+            android:name="com.example.naroro.electricHeater.Activity.DetailsOfDeviceActivity"
+            android:logo="@drawable/icon_back"></activity>
+        <activity android:name="com.example.naroro.electricHeater.Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.VerficationLoginActivity"
+            android:name="com.example.naroro.electricHeater.Activity.VerficationLoginActivity"
             android:label="@string/verfication_login"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.RetrievePasswordActivity" />
+        <activity android:name="com.example.naroro.electricHeater.Activity.RegisterActivity"></activity>
+        <activity android:name="com.example.naroro.electricHeater.Activity.RetrievePasswordActivity" />
     </application>
 
 </manifest>

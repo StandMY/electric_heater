@@ -39,12 +39,14 @@
             <EditText
                 android:id="@+id/new_device_id"
                 android:layout_width="180dp"
+                android:singleLine="true"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/text_device_id"
                 android:background="@android:drawable/alert_light_frame" />
 
             <ImageView
+                android:id="@+id/scanner_device_id"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
@@ -73,36 +75,14 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:singleLine="true"
                 android:layout_toRightOf="@+id/text_device_name"
                 android:background="@android:drawable/alert_light_frame" />
 
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
 
-            <TextView
-                android:id="@+id/text_device_power"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:text="@string/new_device_power"
-                android:textColor="@color/text_black"
-                android:textSize="@dimen/small_text_size" />
-
-            <EditText
-                android:id="@+id/new_device_power"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/text_device_power"
-                android:background="@android:drawable/alert_light_frame" />
-
-        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout

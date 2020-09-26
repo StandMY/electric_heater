@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">暖富乐</string>
+    <string name="app_name">暖福乐</string>
 
     <!--登录界面-->
     <string name="hint_login_tel">请输入手机号</string>
@@ -39,13 +39,15 @@
     <string name="item_wifi">重置WiFi</string>
     <string name="item_delete">删除设备</string>
     <string name="item_remote">远程操控</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="remote_toggle_button">售后远程操控</string>
+    <string name="title_activity_main">暖福乐</string>
 
     <!--连接设备界面-->
     <string name="connect_device">连接设备</string>
     <string name="wifi_hint">请确保您的手机已接入WiFI</string>
-    <string name="fist_operation">1.打开暖气设备，进入配对模式</string>
-    <string name="enter_wifiPw">2.输入wifi密码</string>
+    <string name="fist_operation">1.打开暖气设备</string>
+    <string name="second_operation">2.输入wifi密码</string>
+    <string name="third_operation">3.切换Wifi，连接暖气设备</string>
     <string name="wifiPw_hint">请输入WiFi密码</string>
     <string name="btn_pairing">开始连接</string>
 
@@ -69,6 +71,7 @@
     <!--模式界面-->
     <string name="auto_mode">自动模式</string>
     <string name="time_mode">分段模式</string>
+    <string name="mode_number">请选择分段模式</string>
     <string name="first_time_frag">时段1</string>
     <string name="second_time_frag">时段2</string>
     <string name="third_time_frag">时段3</string>

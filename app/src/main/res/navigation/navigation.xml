@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.naroro.electric_heater.Fragment.HomeFragment"
+        android:name="com.example.naroro.electricHeater.Fragment.HomeFragment"
         android:label="home_fragment"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_model"
-        android:name="com.example.naroro.electric_heater.Fragment.ModelFragment"
+        android:name="com.example.naroro.electricHeater.Fragment.ModelFragment"
         android:label="model_fragment"
         tools:layout="@layout/model_fragment" />
     <fragment
         android:id="@+id/navigation_my"
-        android:name="com.example.naroro.electric_heater.Fragment.MyFragment"
+        android:name="com.example.naroro.electricHeater.Fragment.MyFragment"
         android:label="my_fragment"
         tools:layout="@layout/my_fragment" />
 </navigation>

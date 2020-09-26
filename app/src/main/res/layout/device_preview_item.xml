@@ -11,58 +11,47 @@
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="@color/home_item_bg"
+    android:background="@drawable/btn_border"
     android:layout_marginTop="20dp">
 
-        <CheckBox
-            android:id="@+id/device_checked"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="336dp"
-            android:layout_marginRight="336dp"
-            android:layout_marginBottom="96dp" />
+<!--        <CheckBox-->
+<!--            android:id="@+id/device_checked"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginEnd="336dp"-->
+<!--            android:layout_marginRight="336dp"-->
+<!--            android:layout_marginBottom="96dp" />-->
 
         <TextView
-            android:id="@+id/device_alarm_light"
+            android:id="@+id/device_running_light"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="80dp"
-            android:layout_marginEnd="317dp"
-            android:layout_marginRight="317dp"
-            android:layout_marginBottom="105dp"
-            android:background="@drawable/warn_light" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/running_light" />
 
         <TextView
             android:id="@+id/device_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="60dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@+id/device_running_light"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:text="客厅"
             android:textSize="@dimen/device_name" />
 
         <TextView
             android:id="@+id/device_current_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="49dp"
-            android:layout_marginEnd="136dp"
-            android:layout_marginRight="136dp"
-            android:layout_marginBottom="44dp"
-            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="50dp"
             android:textColor="@color/white"
             android:textSize="@dimen/device_temperature" />
 
@@ -71,12 +60,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="93dp"
         android:textColor="@color/white"
+        android:text="@string/difference"
         android:textSize="@dimen/device_model" />
 
 </RelativeLayout>

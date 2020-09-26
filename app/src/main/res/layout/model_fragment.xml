@@ -15,23 +15,27 @@
             android:id="@+id/device_spinner"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_centerInParent="true" />
+            android:layout_centerInParent="true"
+            android:overlapAnchor="false" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="19dp">
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_marginRight="5dp"
                 android:src="@drawable/in_service" />
 
             <TextView
-                android:id="@+id/service_model"
+                android:id="@+id/running_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="自动模式"
@@ -85,10 +89,11 @@
         </RadioGroup>
     </androidx.cardview.widget.CardView>
 
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/model_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

@@ -18,19 +18,22 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="text_size">25sp</dimen>
-    <dimen name="big_text_size">30sp</dimen>
+    <dimen name="big_text_size">25sp</dimen>
     <dimen name="small_text_size">16sp</dimen>
 
     <!--spinner-->
 
 
     <!--模式界面-->
-    <dimen name="small_spinner_width">83dp</dimen>
+    <dimen name="small_spinner_width">70dp</dimen>
+    <dimen name="small_spinner_padding">0dp</dimen>
     <dimen name="big_spinner_width">120dp</dimen>
-    <dimen name="time_frag_padding">20dp</dimen>
+    <dimen name="time_frag_margin">20dp</dimen>
+    <dimen name="time_frag_padding">15dp</dimen>
     <dimen name="frag_margin_left">20dp</dimen>
+    <dimen name="time_frag_interval">40dp</dimen>
 
-    <dimen name="item_padding_left">40dp</dimen>
+    <dimen name="item_padding_left">0dp</dimen>
     <dimen name="item_margin_top">20dp</dimen>
     <dimen name="small_spinner_margin_left">10dp</dimen>
     <dimen name="big_spinner_margin_left">30dp</dimen>
@@ -44,8 +47,8 @@
     <dimen name="device_model">20sp</dimen>
 
     <!--设备详情界面-->
-    <dimen name="temp_size">150dp</dimen>
-    <dimen name="logo_size">60dp</dimen>
+    <dimen name="temp_size">180dp</dimen>
+    <dimen name="logo_size">40dp</dimen>
     <dimen name="toggle_button_width">150dp</dimen>
 
 </resources>

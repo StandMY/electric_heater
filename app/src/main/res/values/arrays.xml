@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="mode_number">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
     <string-array name="temp_differ_select">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -14,7 +25,7 @@
     </string-array>
 
     <string-array name="hour_select">
-        <item>0</item>
+        <item>00</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -41,15 +52,16 @@
     </string-array>
 
     <string-array name="minute">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
         <item>10</item>
         <item>11</item>
         <item>12</item>
@@ -107,7 +119,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>
     </string-array>
 
     <string-array name="power_select_gear">
@@ -118,6 +129,7 @@
     </string-array>
 
     <string-array name="tempare_select">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -217,6 +229,5 @@
         <item>97</item>
         <item>98</item>
         <item>99</item>
-        <item>10 </item>
     </string-array>
 </resources>
